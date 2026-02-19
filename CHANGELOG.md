@@ -4,18 +4,26 @@ All notable changes to Gogs are documented in this file.
 
 ## 0.15.0+dev (`main`)
 
+### Removed
+
+- The `gogs cert` subcommand. [#8153](https://github.com/gogs/gogs/pull/8153)
+- The `[email] DISABLE_HELO` configuration option. HELO/EHLO is now always sent during SMTP handshake. [#8164](https://github.com/gogs/gogs/pull/8164)
+- Support for MSSQL as a database backend. Stay on 0.14 for continued usage. [#8173](https://github.com/gogs/gogs/pull/8173)
+
+## 0.14.2
+
 ### Fixed
 
 - _Security:_ Cross-repository LFS object overwrite via missing content hash verification. [#8166](https://github.com/gogs/gogs/pull/8166) - [GHSA-gmf8-978x-2fg2](https://github.com/gogs/gogs/security/advisories/GHSA-gmf8-978x-2fg2)
+- _Security:_ Stored XSS via data URI in issue comments. [#8174](https://github.com/gogs/gogs/pull/8174) - [GHSA-xrcr-gmf5-2r8j](https://github.com/gogs/gogs/security/advisories/GHSA-xrcr-gmf5-2r8j)
+- _Security:_ Release tag option injection in release deletion. [#8175](https://github.com/gogs/gogs/pull/8175) - [GHSA-v9vm-r24h-6rqm](https://github.com/gogs/gogs/security/advisories/GHSA-v9vm-r24h-6rqm)
+- _Security:_ Stored XSS in branch and wiki views through author and committer names. [#8176](https://github.com/gogs/gogs/pull/8176) - [GHSA-vgvf-m4fw-938j](https://github.com/gogs/gogs/security/advisories/GHSA-vgvf-m4fw-938j)
 - _Security:_ DOM-based XSS via issue meta selection on the issue page. [#8178](https://github.com/gogs/gogs/pull/8178) - [GHSA-vgjm-2cpf-4g7c](https://github.com/gogs/gogs/security/advisories/GHSA-vgjm-2cpf-4g7c)
 - Unable to update files via web editor and API. [#8184](https://github.com/gogs/gogs/pull/8184)
 
 ### Removed
 
 - Support for passing API access tokens via URL query parameters (`token`, `access_token`). Use the `Authorization` header instead. [#8177](https://github.com/gogs/gogs/pull/8177) - [GHSA-x9p5-w45c-7ffc](https://github.com/gogs/gogs/security/advisories/GHSA-x9p5-w45c-7ffc)
-- The `gogs cert` subcommand. [#8153](https://github.com/gogs/gogs/pull/8153)
-- The `[email] DISABLE_HELO` configuration option. HELO/EHLO is now always sent during SMTP handshake. [#8164](https://github.com/gogs/gogs/pull/8164)
-- Support for MSSQL as a database backend. Stay on 0.14 for continued usage. [#8173](https://github.com/gogs/gogs/pull/8173)
 
 ## 0.14.1
 
